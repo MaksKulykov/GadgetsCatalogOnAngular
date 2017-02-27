@@ -9,24 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var modify_popular_pipe_1 = require('./modify-popular.pipe');
-var AppModule = (function () {
-    function AppModule() {
+var ModifyPopularPipe = (function () {
+    function ModifyPopularPipe() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [
-                app_component_1.AppComponent,
-                modify_popular_pipe_1.ModifyPopularPipe
-            ],
-            bootstrap: [app_component_1.AppComponent]
+    ModifyPopularPipe.prototype.transform = function (value, args) {
+        if (value == true) {
+            return "Модель популярна";
+        }
+        else {
+            return "Модель не популярна";
+        }
+    };
+    ModifyPopularPipe = __decorate([
+        core_1.Pipe({
+            name: 'modifyPopular'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ModifyPopularPipe);
+    return ModifyPopularPipe;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ModifyPopularPipe = ModifyPopularPipe;
+//# sourceMappingURL=modify-popular.pipe.js.map

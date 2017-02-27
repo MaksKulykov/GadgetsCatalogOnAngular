@@ -15,10 +15,10 @@ export class Gadget {
             <div class="col-lg-6">
               <div class="thumbnail">
                 <div class="caption">
-                  <p><b>Название    :</b> {{gadget.gadgetName}} </p>
-                  <p><b>Цена        :</b> {{gadget.gadgetPrice}}</p>
-                  <p><b>Популярность:</b> {{gadget.gadgetPopular}}</p>
-                  <p><b>Дата        :</b> {{gadget.gadgetDate |  date:"dd/MM/yyyy"}}</p>
+                  <p><b>Название:</b>     {{gadget.gadgetName}} </p>
+                  <p><b>Цена:</b>         {{gadget.gadgetPrice}} грн</p>
+                  <p><b>Популярность:</b> {{gadget.gadgetPopular | modifyPopular}}</p>
+                  <p><b>Дата:</b>         {{gadget.gadgetDate | date:"dd/MM/yyyy"}}</p>
                 </div>
               </div>
             </div>
