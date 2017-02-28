@@ -9,26 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var modify_popular_pipe_1 = require('./modify-popular.pipe');
-var modify_date_pipe_1 = require('./modify-date.pipe');
-var AppModule = (function () {
-    function AppModule() {
+var ModifyDatePipe = (function () {
+    function ModifyDatePipe() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [
-                app_component_1.AppComponent,
-                modify_popular_pipe_1.ModifyPopularPipe,
-                modify_date_pipe_1.ModifyDatePipe
-            ],
-            bootstrap: [app_component_1.AppComponent]
+    ModifyDatePipe.prototype.transform = function (value, args) {
+        var date = "" + value;
+        if (date.length == 13) {
+            return Number(date);
+        }
+        else {
+            return Date.now();
+        }
+    };
+    ModifyDatePipe = __decorate([
+        core_1.Pipe({
+            name: 'modifyDate'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ModifyDatePipe);
+    return ModifyDatePipe;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ModifyDatePipe = ModifyDatePipe;
+//# sourceMappingURL=modify-date.pipe.js.map

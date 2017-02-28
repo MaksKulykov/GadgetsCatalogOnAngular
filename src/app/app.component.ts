@@ -11,21 +11,27 @@ export class Gadget {
   selector: 'my-app',
   template: `
           <h1>{{title}}</h1>
-          <div class="row"  *ngFor="let gadget of gadgets">
-            <div class="col-lg-6">
-              <div class="thumbnail">
-                <div class="caption">
-                  <div><label>Название:</label>     {{gadget.gadgetName}} </div>
-                  <div><label>Цена:</label>         {{gadget.gadgetPrice}} грн</div>
-                  <div><label>Популярность:</label> {{gadget.gadgetPopular | modifyPopular}}</div>
-                  <div><label>Дата:</label>        {{gadget.gadgetDate | date:"dd/MM/yyyy"}}</div>
+          <div class="col-lg-8">
+            <div class="row"  *ngFor="let gadget of gadgets">
+              <div class="col-lg-6">
+                <div class="thumbnail">
+                  <div class="caption">
+                    <div><label>Название:</label>     {{gadget.gadgetName}} </div>
+                    <div><label>Цена:</label>         {{gadget.gadgetPrice}} грн</div>
+                    <div><label>Популярность:</label> {{gadget.gadgetPopular | modifyPopular}}</div>
+                    <div><label>Дата:</label>         {{gadget.gadgetDate | modifyDate | date:"dd/MM/yyyy"}}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-2">
-              <div class="btn btn-default" data-class="btnEdit">Редактировать</div>
-            </div>
-           </div>`
+              <div class="col-lg-2">
+                <div class="btn btn-default" data-class="btnEdit">Редактировать</div>
+              </div>
+             </div>
+           </div>
+           <div class="col-lg-4">
+           
+           </div>
+          `
 })
 
 export class AppComponent {

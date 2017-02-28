@@ -4,3 +4,6 @@ h1 {
   font-size: 250%;
 }
 
+.row {
+  border-right: 1px solid black;
+}
